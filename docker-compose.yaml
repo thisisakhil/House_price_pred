@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  ml_model:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./Model/:/app/Model/
+      - ./Code/:/app/Code/
+      - ./Data/:/app/Data/
+      - ./IMG/:/app/IMG/
+    working_dir: /app
